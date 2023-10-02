@@ -66,7 +66,7 @@ export const getApiLimitCount = async () => {
         return 0;
     }
 
-    const userApiLimit = await prisma?.userApiLimit.findUnique({
+    const userApiLimit = await prismadb.userApiLimit.findUnique({
         where:{
             userId
         }

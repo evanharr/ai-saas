@@ -5,7 +5,8 @@ declare global {
 
 };
 
-const prismadb = globalThis.prisma || new PrismaClient();
-if (process.env.NODE_ENV !== "production") globalThis.prisma = prismadb;
+const prismadb = global.prisma || new PrismaClient({log: ["info"] });
+if (process.env.NODE_ENV !== "production") global.prisma = prismadb;
 
 export default prismadb;
+
